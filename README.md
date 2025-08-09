@@ -1,7 +1,7 @@
 # MFIBA
 # Multiscale Feature Importance-based Bit Allocation for End-to-End Feature Coding for Machines
 
-![GitHub stars](https://img.shields.io/github/stars/SYSU-Video/MFIBA?style=social)
+
 ![Python](https://img.shields.io/badge/Python-3.8-blue)
 ![PyTorch](https://img.shields.io/badge/Framework-PyTorch-red)
 
