@@ -31,17 +31,29 @@ pip install -r fasterrcnn_getw/requirements.txt
 ```
 
 ## 📊 Dataset
-In this work, we employed COCO2017 validation dataset, the consturction of dataset configuration is shown in ./fasterrcnn_getw/README.md.
+In this work, we employed COCO2017 validation dataset
+COCO2017 dataset construction
+```
+├── annotations
+  ├── instances_train2017.json
+  ├── instances_val2017.json
+  ├── panoptic_train2017.json
+  ├── panoptic_val2017.json
+  ├── person_keypoints_train2017.json
+  └── person_keypoints_val2017.json
+├── train
+└── val
+```
 For simplicity, we recommend precoding multiscale features through different codecs and storing the results in designated directories. Example path: /home/ta/liujunle/sda2/ELIC/features_for_elic/
 
 
 ## Test
 ### Object detection
-<pre> python /home/ta/liujunle/sda2/fasterrcnn_getw/train.py --data-path /home/ta/liujunle/coco --dataset coco --num-classes 90 --model resnet50 --batch-size 16 --pretrained --test-only --lmbda_for_update 1000 </pre>
+<pre> python /home/ta/liujunle/sda2/fasterrcnn_getw/train.py --data-path path-to-coco --dataset coco --num-classes 90 --model resnet50 --batch-size 16 --pretrained --test-only --lmbda_for_update 1000 </pre>
 ### Instance segmentation
-<pre> python /home/ta/liujunle/sda2/fasterrcnn_getw/train_maskrcnn.py --data-path /home/ta/liujunle/coco --dataset coco --num-classes 90 --model mask_rcnn --batch-size 16 --pretrained --test-only --lmbda_for_update 1000 </pre>
+<pre> python /home/ta/liujunle/sda2/fasterrcnn_getw/train_maskrcnn.py --data-path path-to-coco --dataset coco --num-classes 90 --model mask_rcnn --batch-size 16 --pretrained --test-only --lmbda_for_update 1000 </pre>
 ### Keypoint detection
-<pre> python /home/ta/liujunle/sda2/fasterrcnn_getw/train_keypoint.py --data-path /home/ta/liujunle/coco --dataset coco_kp --num-classes 90 --model keypoint_rcnn --batch-size 16 --pretrained --test-only --lmbda_for_update 1000 </pre>
+<pre> python /home/ta/liujunle/sda2/fasterrcnn_getw/train_keypoint.py --data-path path-to-coco --dataset coco_kp --num-classes 90 --model keypoint_rcnn --batch-size 16 --pretrained --test-only --lmbda_for_update 1000 </pre>
 
 ## 📖 Citation
 
