@@ -31,7 +31,7 @@ pip install -r fasterrcnn_getw/requirements.txt
 ```
 
 ## 📊 Dataset
-In this work, we employed COCO2017 validation dataset, the consturction of current configuration is shown in ./fasterrcnn_getw/README.md.
+In this work, we employed COCO2017 validation dataset, the consturction of dataset configuration is shown in ./fasterrcnn_getw/README.md.
 For simplicity, we recommend precomputing multiscale features through different codecs and storing the results in designated directories. Example path: /home/ta/liujunle/sda2/ELIC/features_for_elic/
 
 
