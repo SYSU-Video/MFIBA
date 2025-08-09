@@ -4,9 +4,6 @@
 ![GitHub stars](https://img.shields.io/github/stars/SYSU-Video/MFIBA?style=social)
 ![Python](https://img.shields.io/badge/Python-3.8-blue)
 ![PyTorch](https://img.shields.io/badge/Framework-PyTorch-red)
-[![Paper](https://img.shields.io/badge/Paper-TMM'23-b31b1b.svg)](https://ieeexplore.ieee.org/document/10349945)
-![License](https://img.shields.io/github/license/SYSU-Video/DT-JRD)
-![Last commit](https://img.shields.io/github/last-commit/SYSU-Video/Learning-to-Predict-Object-Wise-Just-Recognizable-Distortion-for-Image-and-Video-Compression)
 
 Multiscale Feature Importance-based Bit Allocation for End-to-End Feature Coding for Machines \
 [[paper]](https://ieeexplore.ieee.org/document/10349945) [[code]](https://github.com/SYSU-Video/Learning-to-Predict-Object-Wise-Just-Recognizable-Distortion-for-Image-and-Video-Compression) \ [Junle Liu](), \ [Yun Zhang](https://codec.siat.ac.cn/yunzhang/), \
