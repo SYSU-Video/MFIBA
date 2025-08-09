@@ -2,19 +2,18 @@
 # Multiscale Feature Importance-based Bit Allocation for End-to-End Feature Coding for Machines
 
 ![GitHub stars](https://img.shields.io/github/stars/SYSU-Video/MFIBA?style=social)
-![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Python](https://img.shields.io/badge/Python-3.8-blue)
 ![PyTorch](https://img.shields.io/badge/Framework-PyTorch-red)
 [![Paper](https://img.shields.io/badge/Paper-TMM'23-b31b1b.svg)](https://ieeexplore.ieee.org/document/10349945)
 ![License](https://img.shields.io/github/license/SYSU-Video/DT-JRD)
 ![Last commit](https://img.shields.io/github/last-commit/SYSU-Video/Learning-to-Predict-Object-Wise-Just-Recognizable-Distortion-for-Image-and-Video-Compression)
 
-Learning to Predict Object-Wise Just Recognizable  Distortion for Image and Video Compression \
-[[paper]](https://ieeexplore.ieee.org/document/10349945) [[code]](https://github.com/SYSU-Video/Learning-to-Predict-Object-Wise-Just-Recognizable-Distortion-for-Image-and-Video-Compression) \
-[Yun Zhang](https://codec.siat.ac.cn/yunzhang/), Haoqin Lin, [Jing Sun](https://hpcc.siat.ac.cn/homepage/sunjing.html), [Linwei Zhu](https://zhulinweicityu.github.io/), [Sam Kwong](https://scholars.ln.edu.hk/en/persons/sam-tak-wu-kwong) \
-*IEEE Transactions on Multimedia (TMM), 2023*
+Multiscale Feature Importance-based Bit Allocation for End-to-End Feature Coding for Machines \
+[[paper]](https://ieeexplore.ieee.org/document/10349945) [[code]](https://github.com/SYSU-Video/Learning-to-Predict-Object-Wise-Just-Recognizable-Distortion-for-Image-and-Video-Compression) \ [Junle Liu](), \ [Yun Zhang](https://codec.siat.ac.cn/yunzhang/), \
+*ACM TOMM, 2025*
 
 ## Abstract
-Just Recognizable Distortion (JRD) refers to the minimum distortion that notably affects the recognition performance of a machine vision model. If a distortion added to images or videos falls within this JRD threshold, the degradation of the recognition performance will be unnoticeable. Based on this JRD property, it will be useful to Video Coding for Machine (VCM) to minimize the bit rate while maintaining the recognition performance of compressed images. In this study, we propose a deep learning-based JRD prediction model for image and video compression. We first construct a large image dataset of Object-Wise JRD (OW-JRD) containing 29 218 original images with 80 object categories, and each image was compressed into 64 distorted versions using Versatile Video Coding (VVC). Secondly, we analyze the distribution of the OW-JRD, formulate JRD prediction as binary classification problems and propose a deep learning-based OW-JRD prediction framework. Thirdly, we propose a deep learning based binary OW-JRD predictor to predict whether an image object is still detectable or not under different compression levels. Also, we propose an error-tolerance strategy that corrects misclassifications from the binary classifier. Finally, extensive experiments on large JRD image datasets demonstrate that the Mean Absolute Errors (MAEs) of the predicted OW-JRD are 4.90 and 5.92 on different numbers of the classes, which is significantly better than the state-of-the-art JRD prediction model. Moreover, ablation studies on deep network structures, object sizes, features, data padding strategies and image/video coding schemes are presented to validate the effectiveness of the proposed JRD model.
+Feature Coding for Machines (FCM) aims to compress intermediate features effectively for remote intelligent analytics, which is crucial for future intelligent visual applications. In this paper, we propose a Multiscale Feature Importance-based Bit Allocation (MFIBA) for end-to-end FCM. First, we find that the importance of features for machine vision tasks varies with the scales, object size, and image instances. Based on this finding, we propose a Multiscale Feature Importance Prediction (MFIP) module to predict the importance weight for each scale of features. Secondly, we propose a task loss-rate model to establish the relationship between the task accuracy losses of using compressed features and the bitrate of encoding these features. Finally, we develop a MFIBA for end-to-end FCM, which is able to assign coding bits of  multiscale features more reasonably based on their importance. Experimental results demonstrate that when combined with a retained Efficient Learned Image Compression (ELIC), the proposed MFIBA achieves an average of 38.202% bitrate savings in object detection compared to the anchor ELIC. Moreover, the proposed MFIBA achieves an average of 17.212% and 36.49% feature bitrate savings for instance segmentation and keypoint detection, respectively. When the proposed MFIBA is applied to the LIC-TCM, it achieves an average of 18.103$\%$, 19.866% and 19.597% bit rate savings on three machine vision tasks, respectively, which validates the proposed MFIBA has good generalizability and adaptability to different machine vision tasks and FCM base codecs.
 <p align="center">
   <img src="framework.png" alt="Framework Overview" width="700"/>
 </p>
@@ -23,61 +22,43 @@ Just Recognizable Distortion (JRD) refers to the minimum distortion that notably
 
 🧩 This project was trained and tested with:
 
-- 🐍 **Python** 3.10.9
+- 🐍 **Python** 3.8
 
 📦 To install required packages, simply run:
 
 ```bash
-pip install -r requirements.txt
+pip install -r fasterrcnn_getw/requirements.txt
 ```
-## 🗂️ Project Directory Structure
-```
-Project
-├── jsonfiles/
-│   ├── objects_infos.json
-│   ├── coco80_indices.json
-│   ├── JRD_info.json
-│   ├── train.json
-│   ├── val.json
-│   └── test.json
-├── data/
-│   ├── original/
-│   └── distorted/
-├── pre_weights/
-│   └── pre_efficientnetv2-s.pth
-├── pre_weights/
-│   └── Eff
-│       └── Eff.pth
-├── model.py
-├── train.py
-├── PredictJRD.py
-├── my_dataset.py
-└── my_utils.py
-```
-
-📥 The pretrained EfficientNet weights used for training the proposed OW-JRD prediction model is located in ./pre_weights. And the weights of our trained model are also provided.
 
 ## 📊 Dataset
-In this work, we construct the **OW-JRD (Object-wise Just Recognizable Distortion) dataset** [[Link]](https://ieee-dataport.org/documents/object-wise-just-recognizable-distortion-dataset), as illustrated below. It consist of original and distorted images of detected objects from the COCO test set. Images and jsonfiles can be downloaded through the link provided above.
+In this work, we employed COCO2017 validation dataset, the consturction of current configuration is shown in ./fasterrcnn_getw/README.md.
+For simplicity, we recommend precomputing multiscale features through different codecs and storing the results in designated directories. Example path: /home/ta/liujunle/sda2/ELIC/features_for_elic/
 
-## Train
-<pre> python train.py --backbone Eff --train_batch_size 32 --lr 0.01 --gpus 0 --device cuda:0 </pre>
 
 ## Test
-<pre> python PredictJRD.py --train_weights ./train_weights/Eff/Eff.pth </pre>
+# Object detection
+<pre> python /home/ta/liujunle/sda2/fasterrcnn_getw/train.py --data-path /home/ta/liujunle/coco --dataset coco --num-classes 90 --model resnet50 --batch-size 16 --pretrained --test-only --lmbda_for_update 1000 </pre>
+# Instance segmentation
+<pre> python /home/ta/liujunle/sda2/fasterrcnn_getw/train_maskrcnn.py --data-path /home/ta/liujunle/coco --dataset coco --num-classes 90 --model mask_rcnn --batch-size 16 --pretrained --test-only --lmbda_for_update 1000 </pre>
+# Keypoint detection
+<pre> python /home/ta/liujunle/sda2/fasterrcnn_getw/train_keypoint.py --data-path /home/ta/liujunle/coco --dataset coco_kp --num-classes 90 --model keypoint_rcnn --batch-size 16 --pretrained --test-only --lmbda_for_update 1000 </pre>
 
 ## 📖 Citation
 
 If you find our work useful or relevant to your research, please kindly cite our paper:
 
 ```bibtex
-@ARTICLE{zhang2023learning,
-  author={Zhang, Yun and Lin, Haoqin and Sun, Jing and Zhu, Linwei and Kwong, Sam},
-  journal={IEEE Transactions on Multimedia}, 
-  title={Learning to Predict Object-Wise Just Recognizable Distortion for Image and Video Compression}, 
-  year={2024},
-  volume={26},
-  number={},
-  pages={5925-5938},
-  keywords={Image coding;Machine vision;Distortion;Visualization;Predictive models;Image recognition;Task analysis;Deep learning;just recognizable distortion;object detection;video coding for machine},
-  doi={10.1109/TMM.2023.3340882}}
+@article{10.1145/3748654,
+author = {Liu, Junle and Zhang, Yun and Guo, Zixi and Huang, Xiaoxia and Jiang, Gangyi},
+title = {Multiscale Feature Importance-based Bit Allocation for End-to-End Feature Coding for Machines},
+year = {2025},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+issn = {1551-6857},
+url = {https://doi.org/10.1145/3748654},
+doi = {10.1145/3748654},
+note = {Just Accepted},
+journal = {ACM Trans. Multimedia Comput. Commun. Appl.},
+month = aug,
+keywords = {Feature coding for machines, deep learning, image coding, bit allocation, object detection}
+}
