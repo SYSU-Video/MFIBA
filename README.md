@@ -36,11 +36,11 @@ For simplicity, we recommend precomputing multiscale features through different 
 
 
 ## Test
-# Object detection
+### Object detection
 <pre> python /home/ta/liujunle/sda2/fasterrcnn_getw/train.py --data-path /home/ta/liujunle/coco --dataset coco --num-classes 90 --model resnet50 --batch-size 16 --pretrained --test-only --lmbda_for_update 1000 </pre>
-# Instance segmentation
+### Instance segmentation
 <pre> python /home/ta/liujunle/sda2/fasterrcnn_getw/train_maskrcnn.py --data-path /home/ta/liujunle/coco --dataset coco --num-classes 90 --model mask_rcnn --batch-size 16 --pretrained --test-only --lmbda_for_update 1000 </pre>
-# Keypoint detection
+### Keypoint detection
 <pre> python /home/ta/liujunle/sda2/fasterrcnn_getw/train_keypoint.py --data-path /home/ta/liujunle/coco --dataset coco_kp --num-classes 90 --model keypoint_rcnn --batch-size 16 --pretrained --test-only --lmbda_for_update 1000 </pre>
 
 ## 📖 Citation
