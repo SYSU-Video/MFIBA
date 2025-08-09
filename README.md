@@ -31,7 +31,8 @@ pip install -r fasterrcnn_getw/requirements.txt
 ```
 
 ## 📊 Dataset
-In this work, we employed COCO2017 dataset, COCO2017 dataset construction
+In this work, we employed COCO2017 dataset. 
+### COCO2017 Directory Structure
 ```
 ├── annotations
   ├── instances_train2017.json
@@ -43,8 +44,17 @@ In this work, we employed COCO2017 dataset, COCO2017 dataset construction
 ├── train
 └── val
 ```
-For simplicity, we recommend precoding multiscale features through different codecs and storing the results in designated directories. Example path: /home/ta/liujunle/sda2/ELIC/features_for_elic/
-
+For simplicity, we recommend precoding multiscale features through different codecs and storing the results in designated directories. Example path: /home/ta/liujunle/sda2/ELIC/features_for_elic/. 
+### Coding Results Directory Structure
+```
+├── features_for_elic
+  ├── feature_decode_1
+  ├── feature_decode_2
+  ├── feature_decode_3
+  ...
+├── kp_features_for_elic
+└── mask_features_for_elic
+```
 
 ## Test
 ### Object detection
