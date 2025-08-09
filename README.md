@@ -4,11 +4,13 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8-blue)
 ![PyTorch](https://img.shields.io/badge/Framework-PyTorch-red)
+[![arXiv](https://img.shields.io/badge/arXiv-2503.19278-b31b1b.svg)](https://arxiv.org/abs/2503.19278)
 ![License](https://img.shields.io/github/license/SYSU-Video/MFIBA)
 ![Last commit](https://img.shields.io/github/last-commit/SYSU-Video/MFIBA)
+
 Multiscale Feature Importance-based Bit Allocation for End-to-End Feature Coding for Machines \
 [[paper]](https://dl.acm.org/doi/10.1145/3748654) [[code]](https://github.com/SYSU-Video/MFIBA) \
-[Junle Liu](https://github.com/liujle), [Yun Zhang](https://codec.siat.ac.cn/yunzhang/), \
+[Junle Liu](https://github.com/liujle), [Yun Zhang](https://codec.siat.ac.cn/yunzhang/), [Zixi Guo](https://github.com/igizuxo)\
 *ACM TOMM, 2025*
 
 ## Abstract
