@@ -9,7 +9,7 @@ from coco_utils import get_coco_api_from_dataset
 from coco_eval import CocoEvaluator
 import numpy as np
 import utils
-from count_weight import count_weigt_get_target_bpp # process_w (caliberate w)
+from process_w import count_weigt_get_target_bpp # count_weight->org_weights  process_w->caliberated_weights
 from assign_per_image import count_weigt_get_target_bpp #fit curve for singe image
 from mse_bpp import get_mse_bpp_dict, get_quality, count_mse_bpp_per_layer
 
