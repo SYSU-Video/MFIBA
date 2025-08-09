@@ -6,7 +6,7 @@
 ![PyTorch](https://img.shields.io/badge/Framework-PyTorch-red)
 
 Multiscale Feature Importance-based Bit Allocation for End-to-End Feature Coding for Machines \
-[[paper]](https://ieeexplore.ieee.org/document/10349945) [[code]](https://github.com/SYSU-Video/Learning-to-Predict-Object-Wise-Just-Recognizable-Distortion-for-Image-and-Video-Compression) \ [Junle Liu](), \ [Yun Zhang](https://codec.siat.ac.cn/yunzhang/), \
+[[paper]](https://dl.acm.org/doi/10.1145/3748654) [[code]](https://github.com/SYSU-Video/MFIBA) \ [Junle Liu](https://github.com/liujle), \ [Yun Zhang](https://codec.siat.ac.cn/yunzhang/), \
 *ACM TOMM, 2025*
 
 ## Abstract
