@@ -30,10 +30,10 @@ def count_weigt_get_target_bpp(lmbda):
     with open('/home/ta/liujunle/sda2/fasterrcnn_getw/update_qiexian/new_weight.json', 'r') as file:
         new_weight = json.load(file)
     # elic pretrained
-    # a = {'0': 10.953, '1': 10.567, '2': 22.266, '3': 25.237, 'pool': 10.241}
-    # b = {'0': -0.552, '1': -0.678, '2': -0.64, '3': -0.741, 'pool': -0.742}
+    a = {'0': 10.953, '1': 10.567, '2': 22.266, '3': 25.237, 'pool': 10.241}
+    b = {'0': -0.552, '1': -0.678, '2': -0.64, '3': -0.741, 'pool': -0.742}
     # lictcm pretrained a,b
-    a = {'0': 14.92, '1': 15.144, '2': 30.523, '3': 38.994, 'pool': 15.766}
-    b = {'0': -0.652, '1': -0.791, '2': -0.828, '3': -0.952, 'pool': -0.789}
+    # a = {'0': 14.92, '1': 15.144, '2': 30.523, '3': 38.994, 'pool': 15.766}
+    # b = {'0': -0.652, '1': -0.791, '2': -0.828, '3': -0.952, 'pool': -0.789}
     target_bpp = get_target_bpp(names, layer, new_weight, a, b, lmbda)
     return target_bpp, remove_names
