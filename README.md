@@ -31,8 +31,7 @@ pip install -r fasterrcnn_getw/requirements.txt
 ```
 
 ## 📊 Dataset
-In this work, we employed COCO2017 validation dataset
-COCO2017 dataset construction
+In this work, we employed COCO2017 dataset, COCO2017 dataset construction
 ```
 ├── annotations
   ├── instances_train2017.json
